@@ -1,0 +1,27 @@
+.app-header {
+    background-color: #e91e63;
+    color: whitesmoke;
+}
+
+.app-header > section {
+    display: flex;
+    align-items: center;
+}
+
+.app-header h1.logo {
+    flex-grow: 1;
+    font-weight: 600;
+}
+
+.app-header .user {
+    flex-grow: 1;
+}
+
+.app-header .back {
+    flex-grow: 1;
+}
+
+.app-header nav {
+    display: flex;
+    gap: 15px;
+}

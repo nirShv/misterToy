@@ -1,0 +1,15 @@
+.container {
+    padding: 2vh 20vw;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        padding: 2vh 10vw;
+    }
+}
+
+.simple-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 30px;
+}
