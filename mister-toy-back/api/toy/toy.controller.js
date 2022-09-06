@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     const filterBy = { txt: req.query.txt || '' }
     // if (req.query.pageIdx) filterBy.pageIdx = req.query.pageIdx
     // if (req.query.userId) filterBy.userId = req.query.userId
-
+console.log('test');
     toyService.query(filterBy)
         .then(toys => res.send(toys))
 })

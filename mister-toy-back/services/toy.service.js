@@ -10,6 +10,8 @@ module.exports = {
 
 
 function query(filterBy = { txt: '' }) {
+    console.log('gToys', gToys);
+    console.log('filterBy', filterBy);
 
     const regex = new RegExp(filterBy.txt, 'i')
     var toys = gToys.filter(toy => regex.test(toy.name))
