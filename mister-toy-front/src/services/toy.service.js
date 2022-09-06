@@ -1,5 +1,7 @@
 import { storageService } from './async-storage.service.js'
 
+import { httpService } from "./http.service.js";
+
 export const toyService = {
     query,
     save,
@@ -37,22 +39,23 @@ const toy2 = {
 const gDefaultToys = [toy, toy1, toy2]
 const labels = ["On wheels", "Box game", "Art", "Baby", "Doll", "Puzzle", "Outdoor"]
 
-function query(filterBy) {
-    return storageService.query(STORAGE_KEY).then(toys => {
+function query(filterBy = { name: '', maxPrice: Infinity, minPrice: 0 }) {
+    console.log('filterBy', filterBy);
+    return httpService.get('', filterBy).then(toys => {
 
-        if (!toys || !toys.length) {
-            storageService.postMany(STORAGE_KEY, gDefaultToys)
-            toys = gDefaultToys
-        }
-        if (filterBy) {
-            console.log('filterBy', filterBy);
-            var { name, minPrice, maxPrice, inStock, labels, date } = filterBy
-            maxPrice = maxPrice || Infinity
-            minPrice = minPrice || 0
-            toys = toys.filter(toy => toy.name.toLowerCase().includes(name.toLowerCase())
-                && (toy.price < maxPrice)
-                && toy.price > minPrice)
-        }
+        // if (!toys || !toys.length) {
+        //     storageService.postMany(STORAGE_KEY, gDefaultToys)
+        //     toys = gDefaultToys
+        // }
+        // if (filterBy) {
+        //     console.log('filterBy', filterBy);
+        //     var { name, minPrice, maxPrice, inStock, labels, date } = filterBy
+        //     maxPrice = maxPrice || Infinity
+        //     minPrice = minPrice || 0
+        //     toys = toys.filter(toy => toy.name.toLowerCase().includes(name.toLowerCase())
+        //         && (toy.price < maxPrice)
+        //         && toy.price > minPrice)
+        // }
 
 
         return toys
@@ -60,20 +63,22 @@ function query(filterBy) {
 }
 
 function getById(toyId) {
-    return storageService.get(STORAGE_KEY, toyId)
+    return httpService.get(`/${toyId}`).then(toys => {
+        return toys
+    })
 }
 
 function remove(toyId) {
-    return storageService.remove(STORAGE_KEY, toyId)
+    return httpService.delete(`/${toyId}`)
 }
 
 function save(toy) {
     if (toy._id) {
-        return storageService.put(STORAGE_KEY, toy)
+        return httpService.put('', toy)
     } else {
-        toy.inStock = true
-        toy.createdAt = new Date().getTime()
-        return storageService.post(STORAGE_KEY, toy)
+        // toy.inStock = true
+        // toy.createdAt = new Date().getTime()
+        return httpService.post('', toy)
     }
 }
 

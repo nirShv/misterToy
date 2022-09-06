@@ -8,10 +8,11 @@ const app = express()
 
 // Express APp Configurations
 app.use(cookieParser())
-// app.use(express.static('public'))
+app.use(express.static('public'))
 app.use(express.json())
 app.use(cors({
     origin:"http://localhost:3000",
+    // origin:"http://localhost:3030",
     methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true
 }))
@@ -82,4 +83,5 @@ app.use('/api/toy', toyRoutes)
 // })
 
 app.listen(3030, () => console.log('Server listening on port 3030!'))
+// app.listen(3000, () => console.log('Server listening on port 3000!'))
 

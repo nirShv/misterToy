@@ -2,7 +2,7 @@ import Axios from 'axios'
 
 const BASE_URL = process.env.NODE_ENV === 'production'
     ? '/api/'
-    : 'http://localhost:3030/api/'
+    : 'http://localhost:3030/api/toy/'
 
 
 var axios = Axios.create({
@@ -11,6 +11,7 @@ var axios = Axios.create({
 
 export const httpService = {
     get(endpoint, data) {
+        console.log('data', data);
         return ajax(endpoint, 'GET', data)
     },
     post(endpoint, data) {
@@ -25,6 +26,7 @@ export const httpService = {
 }
 
 async function ajax(endpoint, method = 'GET', data = null) {
+    console.log('data', data);
     try {
         const res = await axios({
             url: `${BASE_URL}${endpoint}`,
@@ -32,12 +34,14 @@ async function ajax(endpoint, method = 'GET', data = null) {
             data,
             params: (method === 'GET') ? data : null
         })
+        console.log('res.data',res.data);
         return res.data
     } catch (err) {
         if (err.response && err.response.status === 401) {
             sessionStorage.clear();
             window.location.assign('/')
         }
+        console.log('res.err',err);
         throw err
     }
 }

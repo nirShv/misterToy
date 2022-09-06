@@ -9,12 +9,13 @@ module.exports = {
 }
 
 
-function query(filterBy = { txt: '' }) {
-    console.log('gToys', gToys);
+function query(filterBy = { txt: '' ,maxPrice:Infinity,minPrice:0}) {
     console.log('filterBy', filterBy);
 
     const regex = new RegExp(filterBy.txt, 'i')
-    var toys = gToys.filter(toy => regex.test(toy.name))
+    var toys = gToys.filter(toy => regex.test(toy.name)
+    && (toy.price < filterBy.maxPrice)
+    && (toy.price > filterBy.minPrice))
 
     // if (filterBy.userId) {
     //     toys = toys.filter(toy => filterBy.userId === toy.owner._id)

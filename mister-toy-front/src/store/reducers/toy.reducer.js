@@ -1,6 +1,7 @@
 
 const INITIAL_STATE = {
     toys: null,
+    // filterBy: { name: '', maxPrice: Infinity, minPrice: 0 },
     filterBy: null,
     isLoading: false
 }
