@@ -1,37 +1,36 @@
 
 const INITIAL_STATE = {
-    robots: null,
+    toys: null,
     filterBy: null,
     isLoading: false
 }
 
 
-// action = {type: SET_ROBOTS, robots: [...]}
 export function robotReducer(state = INITIAL_STATE, action) {
 
     switch (action.type) {
-        case 'SET_ROBOTS':
+        case 'SET_TOYS':
             return {
                 ...state,
-                robots: action.robots
+                toys: action.toys
             }
 
-        case 'ADD_ROBOT':
+        case 'ADD_TOY':
             return {
                 ...state,
-                robots: [...state.robots, action.robot]
+                toys: [...state.toys, action.toys]
             }
 
-        case 'REMOVE_ROBOT':
+        case 'REMOVE_TOY':
             return {
                 ...state,
-                robots: state.robots.filter(robot => robot._id !== action.robotId)
+                toys: state.toys.filter(toy => toy._id !== action.toyId)
             }
 
-        case 'UPDATE_ROBOT':
+        case 'UPDATE_TOY':
             return {
                 ...state,
-                robots: state.robots.map(robot => robot._id === action.robot._id ? action.robot : robot)
+                toys: state.toys.map(toy => toy._id === action.toy._id ? action.toy : toy)
             }
 
         case 'SET_FILTER_BY':

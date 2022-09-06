@@ -1,44 +1,19 @@
 /* Basics */
-@import "basics/base";
-@import "basics/layout";
+@import "basics/base.css";
+@import "basics/layout.css";
 
 /* Pages */
-@import "pages/robot-app";
-@import "pages/robot-details";
-@import "pages/robot-edit";
-@import "pages/about";
+/* @import "pages/toy-app.css";
+@import "pages/toy-details.css";
+@import "pages/toy-edit.css";
+@import "pages/about.css"; */
 
 /* Components */
-@import "cmps/robot-list";
-@import "cmps/robot-preview";
-@import "cmps/robot-filter";
-@import "cmps/app-header";
-@import "cmps/nice-button";
-
-.counter,
-.timer {
-    margin-top: 20%;
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-}
-
-.counter button:nth-of-type(2) {
-    font-size: 2em;
-    display: block;
-    border: none;
-    background-color: inherit;
-}
+/* @import "cmps/toy-list.css";*/
+/* @import "cmps/toy-preview.css"; */
+/*@import "cmps/toy-filte.cssr";*/
+@import "cmps/app-header.css";
+@import "cmps/nice-button.css"; 
 
 
 
-
-.fancy-box {
-    background-color: gold;
-    padding: 10px;
-    text-align: center;
-}
-
-.split-pane > div{
-    transition: 0.5s;
-}

@@ -1,4 +1,4 @@
-.robot-preview {
+.toy-preview {
     display: flex;
     flex-direction: column;
     background-color: #e91e630a;
@@ -12,18 +12,18 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .robot-preview {
+    .toy-preview {
         background-size: 80px;
     }
 }
 
-.robot-preview .info {
+.toy-preview .info {
     padding: 10px;
     flex-grow: 1;
     cursor: pointer;
 }
 
-.robot-preview .actions {
+.toy-preview .actions {
     height: 50px;
     display: flex;
     align-items: center;

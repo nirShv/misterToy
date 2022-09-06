@@ -1,29 +1,27 @@
-import { robotService } from "../../services/robot.service"
+import { toyService } from "../../services/toy.service"
 
 
 
-export function loadRobots() {
+export function loadToys() {
 
     return (dispatch, getState) => {
-        const { filterBy } = getState().robotModule
-        robotService.query(filterBy)
-            .then(robots => {
-                dispatch({ type: 'SET_ROBOTS', robots })
+        // const { filterBy } = getState().toyModule
+        toyService.query(/*filterBy*/)
+            .then(toys => {
+                console.log('toys',toys);
+                dispatch({ type: 'SET_TOYS', toys })
             })
             .catch(err => {
                 console.log('err:', err)
             })
-
     }
 }
 
-
-
-export function removeRobot(robotId) {
+export function removeToy(toyId) {
     return (dispatch, getState) => {
-        robotService.remove(robotId)
+        toyService.remove(toyId)
             .then(() => {
-                dispatch({ type: 'REMOVE_ROBOT', robotId })
+                dispatch({ type: 'REMOVE_TOY', toyId })
             })
             .catch(err => {
                 console.log('err:', err)

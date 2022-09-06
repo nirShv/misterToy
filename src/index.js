@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './root-cmp.jsx';
+import { Provider } from 'react-redux';
+import { HashRouter as Router } from 'react-router-dom';
+import App from './root-cmp';
 import reportWebVitals from './reportWebVitals';
+import { store } from './store';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-    <App />
-
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
