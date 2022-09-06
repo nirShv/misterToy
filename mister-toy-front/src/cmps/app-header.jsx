@@ -20,8 +20,9 @@ export function AppHeader(props) {
                 <section className="back">
                     <button onClick={onBack}>Back</button>
                 </section> */}
+                <span className="logo">Mister Toy</span>
                 <nav>
-                    <NavLink to='/' >Home</NavLink>
+                    <NavLink to='/' >Store</NavLink>
                     <NavLink to='/about'>About</NavLink>
                 </nav>
             {/* </section> */}

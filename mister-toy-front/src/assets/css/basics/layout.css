@@ -11,5 +11,7 @@
 .simple-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* grid-template-rows: repeat(auto-fill, minmax(340px, 1fr)); */
+    grid-template-rows: repeat(auto-fill, 340px);
     grid-gap: 30px;
 }

@@ -32,6 +32,7 @@ main {
 .main-app > footer {
     background-color: #111;
     color: white;
+    text-align: center;
 }
 
 a.active {
@@ -61,7 +62,7 @@ a {
 }
 
 a:hover {
-    /* text-decoration: underline; */
+    text-decoration: underline;
 }
 
 button {

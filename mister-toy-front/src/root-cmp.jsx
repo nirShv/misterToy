@@ -6,6 +6,7 @@ import { ToyApp } from './views/toy-app.jsx';
 import './assets/css/main.css'
 import { ToyDetails } from './views/toy-details.jsx';
 import { ToyEdit } from './views/toy-edit.jsx';
+import { About } from './views/about.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='toy/edit' element={<ToyEdit />} />
           <Route path='' element={<ToyApp />} />
           <Route path='toy/:id' element={<ToyDetails />} />
+          <Route path='/about' element={<About />} />
         </Routes>
       </main>
       <footer>

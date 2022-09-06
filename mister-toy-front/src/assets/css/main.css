@@ -5,13 +5,13 @@
 /* Pages */
 /* @import "pages/toy-app.css";
 @import "pages/toy-details.css";
-@import "pages/toy-edit.css";
-@import "pages/about.css"; */
+@import "pages/toy-edit.css"; */
+/* @import "pages/about.css"; */
 
 /* Components */
-/* @import "cmps/toy-list.css";*/
-/* @import "cmps/toy-preview.css"; */
-/*@import "cmps/toy-filte.cssr";*/
+@import "cmps/toy-list.css";
+@import "cmps/toy-preview.css";
+@import "cmps/toy-filter.css";
 @import "cmps/app-header.css";
 @import "cmps/nice-button.css"; 
 

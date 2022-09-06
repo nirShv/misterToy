@@ -16,7 +16,7 @@ export const ToyFilter = (props) => {
 
     const classObj = {className: 'toy-filter'}
     return (
-        <form {...classObj} >
+        <form {...classObj} className="toy-filter">
             <section>
                 <label htmlFor="name">Name</label>
                 <input {...register('name', 'text')} />

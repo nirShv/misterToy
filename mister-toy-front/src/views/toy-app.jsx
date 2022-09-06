@@ -26,12 +26,12 @@ export const ToyApp = (props) => {
     if (!toys) return <div>Loading...</div>
     return (
         <div className='toy-app'>
-            <h1>Toy App</h1>
             <ToyFilter onChangeFilter={onChangeFilter} />
-            <Link to="/toy/edit">Add Toy</Link>
+            <Link to="/toy/edit" className='nice-button'>Add Toy</Link>
             <ToyList onRemove={onRemove} toys={toys} />
         </div>
     )
 }
+
 
 
