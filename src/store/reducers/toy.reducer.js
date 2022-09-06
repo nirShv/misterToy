@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 }
 
 
-export function robotReducer(state = INITIAL_STATE, action) {
+export function toyReducer(state = INITIAL_STATE, action) {
 
     switch (action.type) {
         case 'SET_TOYS':
@@ -43,10 +43,6 @@ export function robotReducer(state = INITIAL_STATE, action) {
                 ...state,
                 isLoading: action.isLoading
             }
-
-
-
-
 
         default:
             return state;

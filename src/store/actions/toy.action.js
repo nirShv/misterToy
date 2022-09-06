@@ -1,14 +1,11 @@
 import { toyService } from "../../services/toy.service"
 
-
-
 export function loadToys() {
 
     return (dispatch, getState) => {
-        // const { filterBy } = getState().toyModule
-        toyService.query(/*filterBy*/)
+        const { filterBy } = getState().toyModule
+        toyService.query(filterBy)
             .then(toys => {
-                console.log('toys',toys);
                 dispatch({ type: 'SET_TOYS', toys })
             })
             .catch(err => {
@@ -30,6 +27,7 @@ export function removeToy(toyId) {
 }
 
 export function setFilterBy(filterBy) {
+    console.log('filterBy', filterBy);
     return (dispatch) => {
         dispatch({ type: 'SET_FILTER_BY', filterBy })
     }
