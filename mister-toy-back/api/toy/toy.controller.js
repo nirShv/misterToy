@@ -8,7 +8,7 @@ module.exports = router
 
 // LIST
 router.get('/', (req, res) => {
-    const filterBy = { txt: req.query.txt || '', maxPrice: Infinity, minPrice: 0 }
+    const filterBy = { txt: req.query.name || '', maxPrice: req.query.maxPrice || Infinity, minPrice: req.query.minPrice ||0 }
     // if (req.query.pageIdx) filterBy.pageIdx = req.query.pageIdx
     // if (req.query.userId) filterBy.userId = req.query.userId
     console.log('test LIST');
